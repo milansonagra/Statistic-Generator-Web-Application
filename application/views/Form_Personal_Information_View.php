@@ -4,12 +4,6 @@
 		<title>Personal Information</title>
 	</head>
 	<body>
-		<?php 
-			echo "Hii";
-			echo "<pre>";
-				//print_r($serial_number);
-			echo "</pre>";
-		?>
 		<?php echo validation_errors('form'); ?>
 		<center>
 		<?php echo form_open("L1_Personal_Info_Controller/submit");?>
