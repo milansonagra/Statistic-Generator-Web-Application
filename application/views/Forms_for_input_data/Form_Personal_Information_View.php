@@ -71,6 +71,39 @@
 				</td>
 			</tr>
 			<tr>
+				<td><b><?php echo form_label('Diagnosis Detail');?></b></td>
+				<td>
+					<?php
+						$options_diagnosis = array(
+							NULL => '---Select The Diagnosis type---',
+							1 => 'one diag',
+							2 => 'two diag'
+						);
+					?>
+					<?php echo form_dropdown('diag_detail',$options_diagnosis);?>
+				</td>
+			</tr>
+			<tr>
+				<?php
+					$options_doctors = array(
+						NULL => '---- Select The Doctor----',
+						1 => 'one dr'
+					);
+				?>
+				<td><b><?php echo form_label('Doctor');?></b></td>
+				<td><?php echo form_dropdown('doctor',$options_doctors);?></td>
+			</tr>
+			<tr>
+				<?php
+					$options_nurse = array(
+						NULL => '---Select Nurssing staff---',
+						1 => 'one nr'
+					);
+				?>
+				<td><b><?php echo form_label('Nurssing staff');?></b></td>
+				<td><?php echo form_dropdown('nurse',$options_nurse);?></td>
+			</tr>
+			<tr>
 				<td><b><?php echo form_label('Remark');?></b></td>
 				<td><textarea name="remark"></textarea></td>
 			</tr>

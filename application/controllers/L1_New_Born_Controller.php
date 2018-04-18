@@ -16,7 +16,7 @@
 			$this->form_validation->set_rules('indoor_number','Indoor Number','required');
 			$this->form_validation->set_rules('name','Name','required|alpha');
 			$this->form_validation->set_rules('Diagnosis','Diagnosis','required');
-			$this->form_validation->set_rules('age','Age','required');
+			$this->form_validation->set_rules('age','Age','required|less_than_equal_to[370]');
 
 		}	
 

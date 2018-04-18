@@ -11,6 +11,10 @@ class Hospital_Model extends CI_Model {
 		$this->db->insert($table_name,$data);	
 	}
 
+	public function fatch() {
+
+	}
+
 	public function count_age($age,$age_in) {
 		if($age_in == 'Y'){
 			$age *= 365;
@@ -32,10 +36,10 @@ class Hospital_Model extends CI_Model {
 			'OPERATOR_NUMBER' => 123,
 			'UPDATE_DATE_TIME' => date("Y-m-d h:i:sa")
 		);
-		
 		$this->insert('personal_information',$pimary_info);
 
 		$primary_indoor_info = array(
+			'ID_NUMBER' => 1,
 			'INDOOR_NUMBER' => $this->input->post('indoor_number'),
 			'ADMISSION_DATE_TIME' => $this->input->post('d_t'),
 			'DIAGNOSIS_NUMBER' => 12,
@@ -44,10 +48,9 @@ class Hospital_Model extends CI_Model {
 			'UPDATE_DATE_TIME' => date("Y-m-d h:i:sa")
 		);
 		$this->insert('primary_indoor_info',$primary_indoor_info);
-	}
 
-	public function form_diagnosis_info() {
 		$diagnisis_info = array(
+			'ID_NUMBER' => 1,
 			'INDOOR_NUMBER' => $this->input->post('indoor_number'),
 			'DIAGNOSIS_NUMBER' => 123,
 			'DIAGNOSIS_DETAIL' => $this->input->post('diag_detail'),
@@ -62,6 +65,7 @@ class Hospital_Model extends CI_Model {
 
 	public function form_new_born() {
 		$new_born = array(
+			'ID_NUMBER' => 1,
 			'INDOOR_NUMBER' => $this->input->post('indoor_number'),
 			'MC_NUMBER' => 2,
 			'NAME' => $this->input->post('name'),
@@ -73,8 +77,34 @@ class Hospital_Model extends CI_Model {
 		$this->insert('new_born',$new_born);
 	}
 
+	public function form_delivery() {
+		$delivery = array(
+			'ID_NUMBER' => 1,
+			'INDOOR_NUMBER' => $this->input->post('indoor_number'),
+			'DATE_FO_DELIVERY' => $this->input->post('delivery_date'),
+			'TYPE_OF_DELIVERY' => $this->input->post('delivery_type'),
+			'MC_NUMBER' => 1,
+			'CHILD_SEX' => $this->input->post('sex'),
+			'CHILD_WIGHT' => $this->input->post('child_wight'),
+			'WEEK_OF_ADMIT' => $this->input->post('week_admit'),
+			'MOBILE_NUMBER' => $this->input->post('mobile_number'),
+			'NUMBER_OF_TIFIN_DAY' => $this->input->post('tifin_day'),
+			'NUMBER_OF_TIFIN_NOON' => $this->input->post('tifin_noon'),
+			'NUMBER_OF_TIFIN_NIGHT' => $this->input->post('tifin_night'),
+			'DOCTOR_NUMBER' => $this->input->post('doctor'),
+			'NURSSING_STAFF_NUMBER' => $this->input->post('nurse'),
+			'SWEEPER_SERVENT' => $this->input->post('sweeperservent'),
+			'ASHA_WORKER' => $this->input->post('ashaworker'),
+			'REMARK' => $this->input->post('remark'),
+			'OPERATOR_NUMBER' => 123,
+			'UPDATE_DATE_TIME' => date("Y-m-d h:i:sa")
+		);
+		$this->insert('delivery',$delivery);
+	}
+
 	public function form_discharge_information() {
 		$discharge_info = array(
+			'ID_NUMBER' => 1,
 			'INDOOR_NUMBER' => $this->input->post('indoor_number'),
 			'DISCHARGE_TYPE' => $this->input->post('discharge_type'),
 			'DISCHARGE_DATE_TIME' => $this->input->post('d_t'),

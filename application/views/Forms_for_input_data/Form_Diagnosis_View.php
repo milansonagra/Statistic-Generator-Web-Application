@@ -17,7 +17,16 @@
 			</tr>
 			<tr>
 				<td><b><?php echo form_label('Diagnosis Detail');?></b></td>
-				<td><textarea name="diag_detail"></textarea></td>
+				<td>
+					<?php
+						$options_diagnosis = array(
+							NULL => '---Select The Diagnosis type---',
+							1 => 'one diag',
+							2 => 'two diag'
+						);
+					?>
+					<?php echo form_dropdown('doctor',$options_diagnosis);?>
+				</td>
 			</tr>
 			<tr>
 				<?php
