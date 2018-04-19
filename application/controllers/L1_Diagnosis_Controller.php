@@ -5,13 +5,19 @@
 
 		private $feilds;
 
-		public function index() {
+		public function __construct() {
+			
+			parent::__construct();
 
 			$GLOBALS['feilds'] = array(
-				'indoor_number' => NULL
+				'indoor_number' => NULL,
+				'remark' => NULL
 			);
+		}
+		
+		public function index() {
 
-			$this->load->view('Forms_for_input_data/Form_Diagnosis_View');
+			$this->load->view('Forms_for_input_data/Form_Diagnosis_View',$GLOBALS['feilds']);
 		}
 
 		private function validation() {
@@ -31,6 +37,7 @@
 
 			$GLOBALS['feilds'] = arrray(
 				'indoor_number' = $this->input->post('indoor_number')
+				'remark' => $this->input->post('remark')
 			);
 
 			if($this->form_validation->run() == FALSE) {

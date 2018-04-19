@@ -5,13 +5,18 @@
 
 		private $feilds
 
-		public function index() {
+		public function __construct() {
+			parent::__construct();
 
 			$GLOBALS['feild'] = array(
-				'indoor_number' => NULL
+				'indoor_number' => NULL,
+				'remark' => NULL
 			);
+		}
 
-			$this->load->view('Forms_for_input_data/Form_Discharge_Info_View');
+		public function index() {
+
+			$this->load->view('Forms_for_input_data/Form_Discharge_Info_View',$GLOBALS['feilds']);
 		}
 
 		private function validation() {
@@ -29,10 +34,11 @@
 			$this->validation();
 
 			$GLOBALS['feilds'] = array(
-				'indoor_number' => $this->input->post('indoor_number')
+				'indoor_number' => $this->input->post('indoor_number'),
+				'remark' => $this->input->post('remark')
 			);
 			if($this->form_validation->run() == FALSE) {
-				$this->load->view('Forms_for_input_data/Form_Discharge_Info_View',$feilds);
+				$this->load->view('Forms_for_input_data/Form_Discharge_Info_View',$GLOBALS['feilds']);
 			}
 			else {
 				$this->load->model('Hospital_Model');

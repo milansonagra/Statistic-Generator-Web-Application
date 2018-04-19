@@ -6,8 +6,9 @@
 
 		private $fields;
 
-		public function index() {
-
+		public function __construct() {
+			parent::__construct();
+		
 			$GLOBALS['fields'] = array(
 				'serial_number' => NULL,
 				'indoor_number' => NULL,
@@ -21,6 +22,9 @@
 				'108_in' => NULL,
 				'remark' => NULL		
 			);
+		}
+
+		public function index() {
 
 			$this->load->view('Forms_for_input_data/Form_Personal_Information_View',$GLOBALS['fields']);
 

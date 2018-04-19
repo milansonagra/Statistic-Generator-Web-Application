@@ -5,7 +5,9 @@
 
 		private $feilds
 
-		public function index() {
+		public function __construct() {
+			parent::__construct();
+
 			$GLOBALS['feilds'] = array(
 				'indoor_number' => NULL,
 				'child_wight' => NULL,
@@ -18,8 +20,11 @@
 				'ashaworker' => NULL,
 				'remark' => NULL
 			);
+		}
 
-			$this->load->view('Forms_for_input_data/Form_Delivery_View');
+		public function index() {
+			
+			$this->load->view('Forms_for_input_data/Form_Delivery_View',$GLOBALS['feilds']);
 		}
 
 		private function validation() {
@@ -57,7 +62,7 @@
 			);
 
 			if ($this->form_validation->run() == FALSE) {
-				$this->load->view('Forms_for_input_data/Form_Delivery_View');
+				$this->load->view('Forms_for_input_data/Form_Delivery_View',$GLOBALS['feilds']);
 			}
 			else {
 				$this->load->model('Hospital_Model');
@@ -66,6 +71,6 @@
 				echo "Entered successfully!";
 				$this->load->view('Forms_for_input_data/Form_Delivery_View');
 			}
-		}		
+		}			
 	}	
 ?>
