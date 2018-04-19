@@ -13,15 +13,15 @@
 			</tr>
 			<tr>
 				<td><b><?php echo form_label('Serial Number');?></b></td>
-				<td><?php echo form_input(array('type'=>'number','id'=>'serial_number','name'=>'serial_number'));?></td>
+				<td><?php echo form_input(array('type'=>'number','id'=>'serial_number','name'=>'serial_number','value'=>$serial_number));?></td>
 			</tr>
 			<tr>
 				<td><b><?php echo form_label('Indoor Number');?></b></td>
-				<td><?php echo form_input(array('type'=>'number','id'=>'indoor_number','name'=>'indoor_number'));?></td>
+				<td><?php echo form_input(array('type'=>'number','id'=>'indoor_number','name'=>'indoor_number','value'=>$indoor_number));?></td>
 			</tr>
 			<tr>
 				<td><b><?php echo form_label('Name');?></b></td>
-				<td><?php echo form_input(array('type'=>'text','id'=>'name','name'=>'name'));?></td>
+				<td><?php echo form_input(array('type'=>'text','id'=>'name','name'=>'name','value'=>$name));?></td>
 			</tr>
 			<tr>
 				<td>
@@ -37,7 +37,7 @@
 			</tr>
 			<tr>
 				<td ><b><?php echo form_label('Age');?></b></td>
-				<td><?php echo form_input(array('type'=>'number','id'=>'age','name'=>'age'));?></td>
+				<td><?php echo form_input(array('type'=>'number','id'=>'age','name'=>'age','value'=>$age));?></td>
 			</tr>
 			<tr>
 				<td></td>
@@ -48,15 +48,15 @@
 			</tr>
 			<tr>
 				<td><b><?php echo form_label('Cast');?></b> </td>
-				<td><?php echo form_input(array('type'=>'text','id'=>'cast','name'=>'cast'));?></td>
+				<td><?php echo form_input(array('type'=>'text','id'=>'cast','name'=>'cast','value'=>$cast));?></td>
 			</tr>
 			<tr>
 				<td><b><?php echo form_label('Profession');?></b></td>
-				<td><?php echo form_input(array('type'=>'text','id'=>'profession','name'=>'profession'));?></td>
+				<td><?php echo form_input(array('type'=>'text','id'=>'profession','name'=>'profession','value'=>$profession));?></td>
 			</tr>
 			<tr>
 				<td><b><?php echo form_label('Address');?></b> </td>
-				<td><textarea name="address"></textarea></td>
+				<td><?php echo form_textarea(array('id'=>'address','name'=>'address','rows'=>3,'cols'=>21,'value'=>$address))?></td>
 			</tr>
 			<tr>
 				<td><b><?php echo form_label('Admission Date & Time');?></b></td>
@@ -105,7 +105,7 @@
 			</tr>
 			<tr>
 				<td><b><?php echo form_label('Remark');?></b></td>
-				<td><textarea name="remark"></textarea></td>
+				<td><?php echo form_textarea(array('id'=>'remark','name'=>'remark','rows'=>3,'cols'=>21,'value'=>$remark))?></td>
 			</tr>
 			<tr style="align-content: center;">
 				<td colspan="2"><center><?php echo form_submit('submit','Submit')?></center></td>

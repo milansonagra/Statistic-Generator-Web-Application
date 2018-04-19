@@ -11,10 +11,6 @@ class Hospital_Model extends CI_Model {
 		$this->db->insert($table_name,$data);	
 	}
 
-	public function fatch() {
-
-	}
-
 	public function count_age($age,$age_in) {
 		if($age_in == 'Y'){
 			$age *= 365;

@@ -3,24 +3,26 @@
 
 
 	class L1_Personal_Info_Controller extends CI_controller {
-		
-		public $fields = array(
-			'serial_number' => NULL,
-			'indoor_number' => NULL,
-			'name' => NULL,
-			'sex' => NULL,
-			'age' => NULL,
-			'cast' => NULL,
-			'profession' => NULL,
-			'address' => NULL,
-			'd_t' => NULL,
-			'108_in' => NULL,
-			'remark' => NULL		
-		);
+
+		private $fields;
 
 		public function index() {
 
-			$this->load->view('Forms_for_input_data/Form_Personal_Information_View');
+			$GLOBALS['fields'] = array(
+				'serial_number' => NULL,
+				'indoor_number' => NULL,
+				'name' => NULL,
+				'sex' => NULL,
+				'age' => NULL,
+				'cast' => NULL,
+				'profession' => NULL,
+				'address' => NULL,
+				'd_t' => NULL,
+				'108_in' => NULL,
+				'remark' => NULL		
+			);
+
+			$this->load->view('Forms_for_input_data/Form_Personal_Information_View',$GLOBALS['fields']);
 
 		}
 
@@ -47,9 +49,23 @@
 		public function submit() {
 			
 			$this->validation();
-			
+
+			$GLOBALS['fields'] = array(
+				'serial_number' => $this->input->post('serial_number'),
+				'indoor_number' => $this->input->post('indoor_number'),
+				'name' => $this->input->post('name'),
+				'sex' => $this->input->post('sex'),
+				'age' => $this->input->post('age'),
+				'cast' => $this->input->post('cast'),
+				'profession' => $this->input->post('profession'),
+				'address' => $this->input->post('address'),
+				'd_t' => $this->input->post('d_t'),
+				'108_in' => $this->input->post('108_in'),
+				'remark' => $this->input->post('remark')						
+			);
+						
 			if ($this->form_validation->run() == FALSE) {
-				$this->load->view('Forms_for_input_data/Form_Personal_Information_View');
+				$this->load->view('Forms_for_input_data/Form_Personal_Information_View',$GLOBALS['fields']);
 			}
 			else {
 				$this->load->model('Hospital_Model');

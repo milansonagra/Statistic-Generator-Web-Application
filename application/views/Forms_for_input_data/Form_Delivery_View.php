@@ -13,7 +13,7 @@
 			</tr>
 			<tr>
 				<td><b><?php echo form_label('Indoor Number');?></b></td>
-				<td><?php echo form_input(array('type'=>'number','id'=>'indoor_number','name'=>'indoor_number'));?></td>
+				<td><?php echo form_input(array('type'=>'number','id'=>'indoor_number','name'=>'indoor_number','value'=>$indoor_number));?></td>
 			</tr>
 			<tr>
 				<td><b><?php echo form_label('Date Of Delivery');?></b></td>
@@ -44,26 +44,26 @@
 			</tr>
 			<tr>
 				<td><b><?php echo form_label('Chile Wight');?></b></td>
-				<td><?php echo form_input(array('type'=>'number','id'=>'child_wight','name'=>'child_wight'));?></td>
+				<td><?php echo form_input(array('type'=>'number','id'=>'child_wight','name'=>'child_wight','value'=>$child_wight));?></td>
 			</tr>
 			<tr>
 				<td><b><?php echo form_label('Week Admit');?></b></td>
-				<td><?php echo form_input(array('type'=>'number','id'=>'week_admit','name'=>'week_admit'));?></td>
+				<td><?php echo form_input(array('type'=>'number','id'=>'week_admit','name'=>'week_admit','value'=>$week_admit));?></td>
 			</tr>
 			<tr>
 				<td><b><?php echo form_label('Mobile Number');?></b></td>
-				<td><?php echo form_input(array('type'=>'number','id'=>'mobile_number','name'=>'mobile_number'));?></td>
+				<td><?php echo form_input(array('type'=>'number','id'=>'mobile_number','name'=>'mobile_number','value'=>$mobile_number));?></td>
 			</tr>
 			<tr>
 				<td><b><?php echo form_label('Number of tifin per day');?></b></td>
-				<td><b>Day: </b><?php echo form_input(array('type'=>'number','id'=>'tifin_day','name'=>'tifin_day'));?></td>
+				<td><b>Day: </b><?php echo form_input(array('type'=>'number','id'=>'tifin_day','name'=>'tifin_day','value'=>$tifin_day));?></td>
 			</tr>
 			<tr>
 				<td rowspan="2"></td>
-				<td><b>Noon: </b><?php echo form_input(array('type'=>'number','id'=>'tifin_noon','name'=>'tifin_noon'));?></td>
+				<td><b>Noon: </b><?php echo form_input(array('type'=>'number','id'=>'tifin_noon','name'=>'tifin_noon','value'=>$tifin_noon));?></td>
 			</tr>
 			<tr>
-				<td><b>Night: </b><?php echo form_input(array('type'=>'number','id'=>'tifin_night','name'=>'tifin_night'));?></td>
+				<td><b>Night: </b><?php echo form_input(array('type'=>'number','id'=>'tifin_night','name'=>'tifin_night','value'=>$tifin_night));?></td>
 			</tr>
 			<tr>
 				<?php
@@ -87,11 +87,11 @@
 			</tr>
 			<tr>
 				<td><b><?php echo form_label('Sweeper Servent');?></b></td>
-				<td><?php echo form_input(array('type'=>'text','id'=>'sweeperservent','name'=>'sweeperservent'));?></td>
+				<td><?php echo form_input(array('type'=>'text','id'=>'sweeperservent','name'=>'sweeperservent','value'=>$sweeperservent));?></td>
 			</tr>
 			<tr>
 				<td><b><?php echo form_label('Asha Worker');?></b></td>
-				<td><?php echo form_input(array('type'=>'text','id'=>'ashaworker','name'=>'ashaworker'));?></td>
+				<td><?php echo form_input(array('type'=>'text','id'=>'ashaworker','name'=>'ashaworker','value'=>$ashaworker));?></td>
 			</tr>
 			<tr>
 				<td><b><?php echo form_label('Remark');?></b></td>

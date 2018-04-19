@@ -13,7 +13,7 @@
 			</tr>
 			<tr>
 				<td><b><?php echo form_label('Indoor Number');?></b></td>
-				<td><?php echo form_input(array('type'=>'number','id'=>'indoor_number','name'=>'indoor_number'));?></td>
+				<td><?php echo form_input(array('type'=>'number','id'=>'indoor_number','name'=>'indoor_number','value'=>$indoor_number));?></td>
 			</tr>
 			<tr>
 				<?php
