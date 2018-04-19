@@ -3,7 +3,14 @@
 
 	class L1_Diagnosis_Controller extends CI_controller {
 
+		private $feilds;
+
 		public function index() {
+
+			$GLOBALS['feilds'] = array(
+				'indoor_number' => NULL
+			);
+
 			$this->load->view('Forms_for_input_data/Form_Diagnosis_View');
 		}
 
@@ -22,8 +29,12 @@
 
 			$this->validation();
 
+			$GLOBALS['feilds'] = arrray(
+				'indoor_number' = $this->input->post('indoor_number')
+			);
+
 			if($this->form_validation->run() == FALSE) {
-				$this->load->view('Forms_for_input_data/Form_Diagnosis_View');
+				$this->load->view('Forms_for_input_data/Form_Diagnosis_View',$feilds);
 			}
 			else {
 				$this->load->model('Hospital_model');

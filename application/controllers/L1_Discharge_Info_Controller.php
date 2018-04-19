@@ -3,7 +3,14 @@
 
 	class L1_Discharge_Info_Controller extends CI_controller {
 
+		private $feilds
+
 		public function index() {
+
+			$GLOBALS['feild'] = array(
+				'indoor_number' => NULL
+			);
+
 			$this->load->view('Forms_for_input_data/Form_Discharge_Info_View');
 		}
 
@@ -21,8 +28,11 @@
 
 			$this->validation();
 
+			$GLOBALS['feilds'] = array(
+				'indoor_number' => $this->input->post('indoor_number')
+			);
 			if($this->form_validation->run() == FALSE) {
-				$this->load->view('Forms_for_input_data/Form_Discharge_Info_View');
+				$this->load->view('Forms_for_input_data/Form_Discharge_Info_View',$feilds);
 			}
 			else {
 				$this->load->model('Hospital_Model');
