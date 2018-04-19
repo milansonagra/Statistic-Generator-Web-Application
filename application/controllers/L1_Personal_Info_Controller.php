@@ -35,16 +35,16 @@
 			$this->load->helper(array('form', 'url'));
 			$this->load->library('form_validation');
 			
-			$this->form_validation->set_rules('serial_number','Serial Number','required');
-			$this->form_validation->set_rules('indoor_number','Indoor Number','required');
+			$this->form_validation->set_rules('serial_number','Serial Number','required|max_length[10]');
+			$this->form_validation->set_rules('indoor_number','Indoor Number','required|max_length[10]');
 			$this->form_validation->set_rules('name','Name','required|alpha');
-			$this->form_validation->set_rules('age','Age','required|less_than_equal_to[370]');
+			$this->form_validation->set_rules('age','Age','required|less_than_equal_to[370]|max_length[3]');
 			$this->form_validation->set_rules('cast','Cast','required|alpha');
 			$this->form_validation->set_rules('profession','Profession','required|alpha');
 			$this->form_validation->set_rules('address','Address','required');
 			$this->form_validation->set_rules('d_t','Date and time','required');
 
-			$this->form_validation->set_rules('indoor_number','Indoor Number','required');
+			$this->form_validation->set_rules('indoor_number','Indoor Number','required|max_length[10]');
 			$this->form_validation->set_rules('diag_detail','Diagnosis Detail','required');
 			$this->form_validation->set_rules('doctor','Doctor','required','Select the Doctor');
 			$this->form_validation->set_rules('nurse','Nurse','required','Select the Nurse');

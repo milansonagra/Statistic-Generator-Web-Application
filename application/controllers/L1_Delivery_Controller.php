@@ -32,14 +32,14 @@
 			$this->load->helper(array('form','url'));
 			$this->load->library('form_validation');
 
-			$this->form_validation->set_rules('indoor_number','Indoor Number','required');
+			$this->form_validation->set_rules('indoor_number','Indoor Number','required|max_length[10]');
 			$this->form_validation->set_rules('delivery_date','Delivery Date','required');
 			$this->form_validation->set_rules('child_wight','Child Wight','required|less_than_equal_to[500]');
 			$this->form_validation->set_rules('week_admit','Week Admit','required');
 			$this->form_validation->set_rules('mobile_number','Mobie Number','required|exact_length[10]');
-			$this->form_validation->set_rules('tifin_day','Number Of Tifin','required|number');
-			$this->form_validation->set_rules('tifin_noon','Number Of Tifin','required|number');
-			$this->form_validation->set_rules('tifin_night','Number Of Tifin','required|number');
+			$this->form_validation->set_rules('tifin_day','Number Of Tifin','required|number|max_length[3]');
+			$this->form_validation->set_rules('tifin_noon','Number Of Tifin','required|number|max_length[3]');
+			$this->form_validation->set_rules('tifin_night','Number Of Tifin','required|number|max_length[3]');
 			$this->form_validation->set_rules('doctor','Doctor','required','Select the Doctor');
 			$this->form_validation->set_rules('nurse','Nurse','required','Select the Nurse');
 		}

@@ -24,7 +24,7 @@
 			$this->load->helper(array('form','url'));
 			$this->load->library('form_validation');
 
-			$this->form_validation->set_rules('indoor_number','Indoor Number','required');
+			$this->form_validation->set_rules('indoor_number','Indoor Number','required|max_length[10]');
 			$this->form_validation->set_rules('discharge_type','Diagnosis type','required');
 			$this->form_validation->set_rules('d_t','Date and time','required');
 		}
@@ -37,6 +37,7 @@
 				'indoor_number' => $this->input->post('indoor_number'),
 				'remark' => $this->input->post('remark')
 			);
+			
 			if($this->form_validation->run() == FALSE) {
 				$this->load->view('Forms_for_input_data/Form_Discharge_Info_View',$GLOBALS['feilds']);
 			}
