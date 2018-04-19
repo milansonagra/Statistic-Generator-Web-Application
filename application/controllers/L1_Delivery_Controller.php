@@ -3,7 +3,7 @@
 
 	class L1_Delivery_Controller extends CI_controller {
 
-		private $feilds
+		private $feilds;
 
 		public function __construct() {
 			parent::__construct();

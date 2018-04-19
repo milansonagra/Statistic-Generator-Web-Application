@@ -36,7 +36,7 @@
 			$this->validation();
 
 			$GLOBALS['feilds'] = arrray(
-				'indoor_number' = $this->input->post('indoor_number')
+				'indoor_number' => $this->input->post('indoor_number'),
 				'remark' => $this->input->post('remark')
 			);
 
