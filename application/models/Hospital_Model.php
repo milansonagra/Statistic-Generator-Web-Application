@@ -3,11 +3,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 class Hospital_Model extends CI_Model {
-	
-	private function insert($table_name,$data) {
 
+	public function __construct() {
+		parent::__construct();
 		$this->load->database();
 		$this->db->query('USE hospital');
+	}	
+	private function insert($table_name,$data) {
+
 		$this->db->insert($table_name,$data);	
 	}
 

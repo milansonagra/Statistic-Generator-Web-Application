@@ -47,7 +47,7 @@ Class Login_Controller extends CI_Controller {
 				$data = array(
 					'error_message' => 'Invalid Username or Password'
 				);
-				$this->load->view('login_form', $data);
+				$this->load->view('Login_View', $data);
 			}
 		}
 	}
@@ -61,7 +61,7 @@ Class Login_Controller extends CI_Controller {
 		);
 		$this->session->unset_userdata('logged_in', $sess_array);
 		$data['message_display'] = 'Successfully Logout';
-		$this->load->view('login_form', $data);
+		$this->load->view('Login_View', $data);
 	}
 }
 ?>

@@ -1,14 +1,14 @@
 <?php
 	defined('BASEPATH') OR exit('No direct script access allowed');
 
-	class L1_Discharge_Info_Controller extends CI_controller {
+	class L1_Discharge_Info_Controller extends CI_Controller {
 
 		private $feilds;
 
 		public function __construct() {
 			parent::__construct();
 
-			$GLOBALS['feild'] = array(
+			$GLOBALS['feilds'] = array(
 				'indoor_number' => NULL,
 				'remark' => NULL
 			);

@@ -5,6 +5,8 @@
 class Login_model extends CI_Model{
     function __construct(){
         parent::__construct();
+        $this->load->database();
+		$this->db->query('USE hospital');
     }
     
     public function validate(){
@@ -15,18 +17,28 @@ class Login_model extends CI_Model{
         // Prep the query
         $this->db->where('username', $username);
         $this->db->where('password', $password);
-        
+
         // Run the query
         $query = $this->db->get('users');
         // Let's check if there are any results
-        if($query->num_rows == 1)
+
+        $flag = false;
+        foreach($query->result() as $entry) {
+            
+            if($entry->username == $username && $entry->password == $password) {
+                $flag = true;
+                break;
+            }
+        }
+
+        if($flag)
         {
             // If there is a user, then create session data
             $row = $query->row();
             $data = array(
-                    'userid' => $row->userid,
-                    'fname' => $row->fname,
-                    'lname' => $row->lname,
+                    'user_id' => $row->user_id,
+                    'firstname' => $row->firstname,
+                    'lastname' => $row->lastname,
                     'username' => $row->username,
                     'validated' => true
                     );

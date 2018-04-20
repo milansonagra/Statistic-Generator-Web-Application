@@ -24,7 +24,7 @@
     
     public function do_logout(){
         $this->session->sess_destroy();
-        $this->load->controller('Login');
+        $this->load->controller('Login/index');
     }
  }
  ?>

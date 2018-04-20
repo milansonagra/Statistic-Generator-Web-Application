@@ -12,14 +12,14 @@ class Login extends CI_Controller{
         // Load our view to be displayed
         // to the user
         $data['msg'] = $msg;
-        $this->load->view('login_view', $data);
+        $this->load->view('Login_View', $data);
     }
     
     public function process(){
         // Load the model
-        $this->load->model('login_model');
+        $this->load->model('Login_Model');
         // Validate the user can login
-        $result = $this->login_model->validate();
+        $result = $this->Login_Model->validate();
         // Now we verify the result
         if(! $result){
             // If user did not validate, then show them login page again
@@ -28,7 +28,9 @@ class Login extends CI_Controller{
         }else{
             // If user did validate, 
             // Send them to members area
-            redirect('home');
+            
+        	$this->load->view('welcome_message');
+            //redirect('home');
         }        
     }
 }
