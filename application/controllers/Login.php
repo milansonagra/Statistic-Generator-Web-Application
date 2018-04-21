@@ -30,7 +30,6 @@ class Login extends CI_Controller{
             // Send them to members area
             
         	$this->load->view('welcome_message');
-            //redirect('home');
         }        
     }
 }

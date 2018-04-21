@@ -38,7 +38,12 @@
 			$this->form_validation->set_rules('serial_number','Serial Number','required|max_length[10]');
 			$this->form_validation->set_rules('indoor_number','Indoor Number','required|max_length[10]');
 			$this->form_validation->set_rules('name','Name','required|alpha');
-			$this->form_validation->set_rules('age','Age','required|less_than_equal_to[370]|max_length[3]');
+			if($this->input->post('age_in') == 'y') {
+				$this->form_validation->set_rules('age','Age','required|less_than_equal_to[370]|max_length[3]');
+			} else {
+				$this->form_validation->set_rules('age','Age','required|less_than_equal_to[366]|max_length[3]');
+			}
+
 			$this->form_validation->set_rules('cast','Cast','required|alpha');
 			$this->form_validation->set_rules('profession','Profession','required|alpha');
 			$this->form_validation->set_rules('address','Address','required');

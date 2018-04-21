@@ -32,7 +32,7 @@ class Hospital_Model extends CI_Model {
 			'PROFESSION' => $this->input->post('profession'),
 			'ADDRESS' => $this->input->post('address'),
 			'108IN' => $this->input->post('108_in') == 'yes'?'yes':'no',
-			'OPERATOR_NUMBER' => 123,
+			'OPERATOR_NUMBER' => $this->session->userdata('user_id'),
 			'UPDATE_DATE_TIME' => date("Y-m-d h:i:sa")
 		);
 		$this->insert('personal_information',$pimary_info);
@@ -43,7 +43,7 @@ class Hospital_Model extends CI_Model {
 			'ADMISSION_DATE_TIME' => $this->input->post('d_t'),
 			'DIAGNOSIS_NUMBER' => 12,
 			'REMARK' => $this->input->post('remark'),
-			'OPERATOR_NUMBER' => 123,
+			'OPERATOR_NUMBER' => $this->session->userdata('user_id'),
 			'UPDATE_DATE_TIME' => date("Y-m-d h:i:sa")
 		);
 		$this->insert('primary_indoor_info',$primary_indoor_info);
@@ -56,7 +56,7 @@ class Hospital_Model extends CI_Model {
 			'DOCTOR_NUMBER' => $this->input->post('doctor'),
 			'NURSSING_STAFF_NUMBER' => $this->input->post('nurse'),
 			'REMARK' => $this->input->post('remark'),
-			'OPERATOR_NUMBER' => 123,
+			'OPERATOR_NUMBER' => $this->session->userdata('user_id'),
 			'UPDATE_DATE_TIME' => date("Y-m-d h:i:sa")
 		);
 		$this->insert('diagnosis',$diagnisis_info);
@@ -70,7 +70,7 @@ class Hospital_Model extends CI_Model {
 			'NAME' => $this->input->post('name'),
 			'DIAGNOSIS_NUMBER' => $this->input->post('Diagnosis'),
 			'REMARK' => $this->input->post('remark'),
-			'OPERATOR_NUMBER' => 123,
+			'OPERATOR_NUMBER' => $this->session->userdata('user_id'),
 			'UPDATE_DATE_TIME' => date("Y-m-d h:i:sa")
 		);
 		$this->insert('new_born',$new_born);
@@ -95,7 +95,7 @@ class Hospital_Model extends CI_Model {
 			'SWEEPER_SERVENT' => $this->input->post('sweeperservent'),
 			'ASHA_WORKER' => $this->input->post('ashaworker'),
 			'REMARK' => $this->input->post('remark'),
-			'OPERATOR_NUMBER' => 123,
+			'OPERATOR_NUMBER' => $this->session->userdata('user_id'),
 			'UPDATE_DATE_TIME' => date("Y-m-d h:i:sa")
 		);
 		$this->insert('delivery',$delivery);
@@ -108,7 +108,7 @@ class Hospital_Model extends CI_Model {
 			'DISCHARGE_TYPE' => $this->input->post('discharge_type'),
 			'DISCHARGE_DATE_TIME' => $this->input->post('d_t'),
 			'108OUT' => $this->input->post('108_out') == 'yes'?'yes':'no',
-			'OPERATOR_NUMBER' => 123,
+			'OPERATOR_NUMBER' => $this->session->userdata('user_id'),
 			'UPDATE_DATE_TIME' => date("Y-m-d h:i:sa")
 		);
 		$this->insert('discharge_information',$discharge_info);

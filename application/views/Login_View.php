@@ -6,7 +6,6 @@
     </head>
     <body>
         <center>
-        <font color="red"><?php echo "$msg";?></font>    
         <div id='login_form'>
             <form action='Login/process' method='post' name='process'>
                 <table cellpadding ="5px" cellspacing="10px"  style="border: double;align-content: center;">
