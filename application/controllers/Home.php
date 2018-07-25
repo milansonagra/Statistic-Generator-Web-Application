@@ -21,7 +21,7 @@
 
         if(! $this->session->userdata('validated')) {
             
-            header('Location: http://localhost/Statistic-Generator-Web-Application/Login');
+            header('Location: http://localhost:8088/Statistic-Generator-Web-Application/Login');
         }
     }   
     
@@ -30,7 +30,7 @@
         if($this->session->userdata('validated')) {
                         
             $this->session->sess_destroy();
-            header('Location: http://localhost/Statistic-Generator-Web-Application/Login');
+            header('Location: http://localhost:8088/Statistic-Generator-Web-Application/Login');
         }
     }
 }

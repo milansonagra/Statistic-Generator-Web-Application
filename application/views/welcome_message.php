@@ -84,7 +84,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
 </div>
-<a href="http://localhost/Statistic-Generator-Web-Application/home/do_logout">Logout</a>
-<a href="http://localhost/Statistic-Generator-Web-Application/L1_Personal_Info_Controller">personal info</a>
+<a href="http://localhost:8088/Statistic-Generator-Web-Application/home/do_logout">Logout</a>
+<a href="http://localhost:8088/Statistic-Generator-Web-Application/L1_Personal_Info_Controller">personal info</a>
 </body>
 </html>
